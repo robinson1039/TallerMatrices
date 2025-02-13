@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Metodos {
-    
+
     public static void llenarMatriz(int[][] matriz) {
         int filas = matriz.length;
         int columnas = matriz[0].length;
@@ -107,4 +107,13 @@ public class Metodos {
         return iteracion;
     }
 
+    public static ArrayList<Integer> MatrizArray(int[][] matriz){
+        ArrayList<Integer>matrizArray = new ArrayList<>();
+        for (int[] ints : matriz) {
+            for (int anInt : ints) {
+                matrizArray.add(anInt);
+            }
+        }
+        return matrizArray;
+    }
 }
