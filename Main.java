@@ -44,6 +44,15 @@ public class Main {
             } else {
                 System.out.println("Dimensión inválida, debe ser mayor que 0.");
             }
+        }else if (item == 5) {
+            System.out.print("Ingrese la dimensión de la matriz: ");
+            int d = sc.nextInt();
+            if (d > 0) {
+                Punto5 punto5 = new Punto5();
+                punto5.p4(d);
+            } else {
+                System.out.println("Dimensión inválida, debe ser mayor que 0.");
+            }
         } else {
             System.out.println("Opción incorrecta.");
         }
