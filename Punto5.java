@@ -5,6 +5,6 @@ public class Punto5 {
         Metodos.llenarMatriz(matriz);
         System.out.println("Matriz generada:");
         Metodos.mostrarMatriz(matriz);
-        Metodos.MatrizArray(matriz);
+        System.err.println(Metodos.MatrizArray(matriz));
     }
 }
