@@ -27,7 +27,7 @@ public class Metodos {
         }
     }
 
-    public static int sumaNumeros(int[][] matriz){
+    public static int sumaNumerosDelaMAtriz(int[][] matriz){
         int sumaTotal = 0;
         for (int[] ints : matriz) {
             for (int anInt : ints) {
@@ -37,7 +37,7 @@ public class Metodos {
         return sumaTotal;
     }
 
-    public static int NumMayor(int[][] matriz){
+    public static int NumMayorDeLaMatriz(int[][] matriz){
         ArrayList<Integer>numerosMatriz = new ArrayList<>();
         for (int[] ints : matriz) {
             for (int anInt : ints) {
@@ -45,6 +45,16 @@ public class Metodos {
             }
         }
         return Collections.max(numerosMatriz);
+    }
+
+    public static int NumMenorDeLaMatriz(int[][] matriz){
+        ArrayList<Integer>numerosMatriz = new ArrayList<>();
+        for (int[] ints : matriz) {
+            for (int anInt : ints) {
+                numerosMatriz.add(anInt);
+            }
+        }
+        return Collections.min(numerosMatriz);
     }
 
     public static int[] posNumMayor(int p, int[][] matriz) {
@@ -115,5 +125,173 @@ public class Metodos {
             }
         }
         return matrizArray;
+    }
+
+    public static ArrayList<Integer> NumerosPares(int[][] matriz) {
+        ArrayList<Integer> numerosPares = new ArrayList<>();
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] % 2 == 0) {
+                    numerosPares.add(matriz[i][j]);
+                }
+            }
+        }
+        return numerosPares;
+    }
+
+    public static ArrayList<Integer> NumerosNegativos(int[][] matriz) {
+        ArrayList<Integer> numerosNegativos = new ArrayList<>();
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] < 0) {
+                    numerosNegativos.add(matriz[i][j]);
+                }
+            }
+        }
+        return numerosNegativos;
+    }
+
+    public static ArrayList<Integer> NumerosPositivos(int[][] matriz) {
+        ArrayList<Integer> numerosPositivos = new ArrayList<>();
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] >= 0) {
+                    numerosPositivos.add(matriz[i][j]);
+                }
+            }
+        }
+        return numerosPositivos;
+    }
+
+    public static ArrayList<Integer> NumerosImpares(int[][] matriz) {
+        ArrayList<Integer> numerosImpares = new ArrayList<>();
+
+        // Recorremos toda la matriz
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] % 2 != 0) {
+                    numerosImpares.add(matriz[i][j]);
+                }
+            }
+        }
+        return numerosImpares;
+    }
+
+    public static void mostarNumerosPares(ArrayList<Integer> pares) {
+        System.out.println("Los números pares en la matriz son: " + pares);
+    }
+
+    public static void mostarNumerosImpares(ArrayList<Integer> impares) {
+        System.out.println("Los números impares en la matriz son: " + impares);
+    }
+
+    public static ArrayList<Integer> numeroDeCeros(int[][] matriz) {
+        ArrayList<Integer> ceros = new ArrayList<>();
+
+        // Recorremos toda la matriz
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] == 0) {
+                    ceros.add(matriz[i][j]);
+                }
+            }
+        }
+        return ceros;
+    }
+
+    public static void findMax(int[][] matrix) {
+        int max = Integer.MIN_VALUE;
+        int row = -1, col = -1;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > max) {
+                    max = matrix[i][j];
+                    row = i;
+                    col = j;
+                }
+            }
+        }
+        System.out.println("Máximo valor: " + max + " en la posición (" + row + ", " + col + ")");
+    }
+
+    public static void findMin(int[][] matrix) {
+        int min = Integer.MAX_VALUE;
+        int row = -1, col = -1;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] < min) {
+                    min = matrix[i][j];
+                    row = i;
+                    col = j;
+                }
+            }
+        }
+        System.out.println("Mínimo valor: " + min + " en la posición (" + row + ", " + col + ")");
+    }
+
+    public static void printColumnOfMax(int[][] matrix) {
+        int max = Integer.MIN_VALUE;
+        int colIndex = -1;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > max) {
+                    max = matrix[i][j];
+                    colIndex = j;
+                }
+            }
+        }
+        System.out.println("Columna donde se encuentra el máximo valor:");
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(matrix[i][colIndex]);
+        }
+    }
+
+    public static void printRowOfMax(int[][] matrix) {
+        int max = Integer.MIN_VALUE;
+        int rowIndex = -1;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > max) {
+                    max = matrix[i][j];
+                    rowIndex = i;
+                }
+            }
+        }
+        System.out.println("Fila donde se encuentra el máximo valor:");
+        for (int j = 0; j < matrix[rowIndex].length; j++) {
+            System.out.print(matrix[rowIndex][j] + " ");
+        }
+        System.out.println();
+    }
+
+    public static int countDigits(String str) {
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            if (Character.isDigit(c)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void printMatrix(String[][] matrix) {
+        for (String[] row : matrix) {
+            for (String elem : row) {
+                System.out.print(elem + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int elem : row) {
+                System.out.print(elem + "\t");
+            }
+            System.out.println();
+        }
     }
 }

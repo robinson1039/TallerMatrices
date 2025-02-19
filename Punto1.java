@@ -7,9 +7,9 @@ public class Punto1 {
         Metodos.llenarMatriz(matriz);
         System.out.println("Matriz generada:");
         Metodos.mostrarMatriz(matriz);
-        int suma = Metodos.sumaNumeros(matriz);
+        int suma = Metodos.sumaNumerosDelaMAtriz(matriz);
         System.out.println("La suma de los numeros en la matriz es: " + suma);
-        int numeroMAyor = Metodos.NumMayor(matriz);
+        int numeroMAyor = Metodos.NumMayorDeLaMatriz(matriz);
         System.out.println("El numero mayor es: " + numeroMAyor);
         int[] pos = Metodos.posNumMayor(numeroMAyor, matriz);
         System.out.println("la posicion es: " + Arrays.toString(pos));
